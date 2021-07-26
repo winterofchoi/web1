@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+  <head>
+  <title>web1 - HTML, CSS 정리</title>
+  <meta charset="utf-8">
+  </head>
+
+<body>
+  <h1><a href="index.html">web</a></h1>
+  <ul>
+    <li><a href="1.html">1. HTML</a></li>
+    <li><a href="2.html">2. CSS</a></li>
+    <li><a href="3.html">3. Javascript</a></li>
+  </ul>
+  <ol>
+    <li>1. HTML</li>
+    <li>2. HTML, CSS 정리</li>
+    <li>3. Javascript 정리</li>
+  </ol>
+  <h2>HTML, CSS 정리</h2>
+  HTML5 웹 문서를 구성하는 3가지 요소
+
+ => HTML (웹 페이지 문서) + CSS (웹 페이지 디자인) + JS (웹 페이지 이벤트)
+
+
+
+<!DOCTYPE html> : 현재 문서가 HTML 문서임을 정의
+
+HTML문서의 전체 구성은 html, head, body 태그로 구성
+
+
+
+태그에는 시작 태그와 종료 태그가 있으며, '/'로 구분
+
+시작 태그 : <body>
+
+종료 태그 : </body>
+
+시작 태그만 있는 경우 (예외) : <br/>, <hr/>
+
+
+
+<pre> : 공백 그대로 출력 (' ', '\t', '\n')
+
+
+
+<ul> : 번호 없는 목록을 표시 => 항목 앞에 심볼을 표시
+
+<ol> : 번호 있는 목록을 표시 => 항목 앞에 숫자, 알파벳 등으로 표시
+
+<li> : <ul>, <ol> 하위 태그
+
+
+
+<table>
+
+   <caption></caption> : table의 title을 작성
+
+   <tr>
+
+      <th></th> : table header를 작성
+
+      <td></td> : table data를 작성
+
+   </tr>
+
+</table>
+
+
+
+<a> : 하나의 문서에서 다른 문서로 연결 (하이퍼링크)
+
+href 속성 : 하이러링크를 클릭했을 때 이동할 문서의 URL을 지정
+
+target 속성 : 하이퍼링크를 클릭했을 때 현재 창, 새 창 여부 결정
+
+ - _blank : 링크 내용이 새 창이나 새 탭에서 열림
+
+ - _self : 현재 창에서 열림, target 속성의 기본 값
+
+
+
+<form> : 사용자로부터 데이터를 입력받아 서버에서 처리하기 위한 용도로 사용
+
+method 속성 : 서버쪽 프로그램으로 넘겨줄 방법을 지정
+
+ - GET : 주소 표시줄에 사용자가 입력한 내용 표시
+
+ - POST : 사용자가 입력한 내용시 표시되지 않음, 사용자의 입력을 표준 입력으로 전달
+
+name 속성 : form의 이름을 지정, 구분자로 사용
+
+action 속성 : form태그 안의 내용을 처리해 줄 URL을 지정
+
+
+
+<input> 태그는 type 속성에 따라 여러가지 형태로 표시
+
+type="text" : 한 줄의 텍스트 입력
+
+type="password" : 비밀번호 입력
+
+type="date" : 사용자 지역을 기준으로 날짜(년, 월, 일) 입력
+
+type="number" : 숫자를 조절할 수 있는 화살표
+
+type="checkbox" : 주어진 항목에서 2개 이상 선택 가능한 체크박스
+
+type="radio" : 주어진 항목에서 1개만 선택할 수 있는 라디오 버튼
+
+type="submit" : 서버 전송 버튼
+
+type="reset" : 리셋 버튼
+
+type="button" : 기능이 없는 버튼
+
+type="hidden" : 사용자에게는 보이지 않지만 서버로 넘겨지는 값
+
+
+
+<div>, <span> : 공간 분할 태그
+
+div : block 형식으로 공간을 분할, 각각의 block을 배치하고 css를 활용하여 스타일 적용
+
+span : inline 형식으로 공간을 분할, div와 p 태그와 함께 웹 페이지의 일부분에 스타일을 적용
+
+[div와 span의 차이점]
+
+<div>
+
+자동 줄바꿈이 일어나면서 세로로 나열
+
+동일한 문장을 감쌌을 때 박스 형태로 영역이 설정
+
+margin이 4방향 모두 적용
+
+<span>
+
+줄바꿈이 일어나지 않고 가로로 나열
+
+동일한 문장을 감쌌을 때 줄 단위로 영역이 설정되기 때문에 텍스트가 노출되는 영역만 포함
+
+margin이 양 옆으로만 적용
+
+
+
+
+
+CSS 규칙은 선택자와 선언 두 부분으로 구성
+
+선택자는 규칙이 적용되는 요소 ex) h1, .css, #css, ...
+
+선언 부분에서는 선택자에 적용될 스타일을 작성
+
+
+
+스타일 적용 종류 - 외부스타일, 내부스타일, 인라인스타일
+
+외부스타일 : link tag, import를 통해 외부의 css를 참조
+
+ex) <link rel = "stylesheet" type="text/css" href="../css/mystyle.css">
+
+      @import url("../css/mystyle.css");
+
+내부스타일 : style tag를 사용하여 내부 스타일시트를 적용, <head> 내부에 작성
+
+ex) <style type="text/css">
+
+          h2 {color: yellow;}
+
+          p {background-color: skyblue; color: purple;}
+
+     </style>
+
+인라인 스타일 : 개별 요소마다 스타일을 지정, 유지보수에 용이하지 않음
+
+ex) <h2 style="color: yellow;">Inline Style Sheet</h2>
+
+
+
+스타일 적용 순위 - 인라인스타일 > 내부스타일 > 외부스타일
+
+
+
+[일반 선택자의 종류]
+
+전체 선택자 - HTML문서 내 모든 태그를 선택 ex) *{ }
+
+타입 선택자 - 매칭되는 태그를 선택 ex) h1, h2, h3{ }
+
+클래스 선택자 - class 속성 값과 매칭되는 태그를 선택 ex) .className{ }
+
+ID 선택자 - id 속성 값과 매칭되는 태그를 선택 ex) #idName{ }
+
+일반 선택자의 우선 순위 - ID 선택자 > 클래스 선택자 > 타입 선택자 > 전체 선택자
+
+
+
+[박스모델]
+
+content, padding, border, margin으로 구분
+
+content : 화면에 표시되는 요소
+
+padding : 박스 내부의 간격
+
+margin : 다른 content(외부)와의 간격
+
+border : content의 테두리
+
+
+
+margin: 1px; // 모든 면에 적용
+
+margin: 1px 2px; // 1px는 top, bottom, 2px는 left, right에 적용
+
+margin: 1px 2px 3px; // 1px는 top, 2px는 left, right, 3px는 bottom에 적용
+
+margin: 1px 2px 3px 4px; // 1px는 top, 2px는 right, 3px는 bottom, 4px는 left에 적용
+
+</html>

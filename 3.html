@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+  <head>
+  <title>web1 - Javascript 정리</title>
+  <meta charset="utf-8">
+  </head>
+
+<body>
+  <h1><a href="index.html">web</a></h1>
+  <ul>
+    <li><a href="1.html">1. HTML</a></li>
+    <li><a href="2.html">2. CSS</a></li>
+    <li><a href="3.html">3. Javascript</a></li>
+  </ul>
+  <ol>
+    <li>1. HTML</li>
+    <li>2. HTML, CSS 정리</li>
+    <li>3. Javascript 정리</li>
+  </ol>
+  <h2>Javascript 정리</h2>
+  HTML 문서를 구성하는 3가지 요소
+
+=> HTML - 구조 / CSS - 표현 / JavaScript - 동작
+
+
+
+
+<head> 안에 <script> 작성
+html에서는 <script>태그 안에 자바스크립트 언어를 작성합니다.
+
+이 때 외부의 js 파일을 가져오는 것도 가능합니다.
+
+
+src로 외부의 js파일을 가져옴
+
+
+[변수]
+
+
+위의 사진처럼 어떤 타입의 데이터도 담을 수 있습니다.
+
+
+
+[데이터 타입]
+
+
+
+
+[호이스팅]
+
+ - 영역 내에서 끌어오는 개념(선언된 변수)
+
+
+
+변수 a 선언보다 console.log(a);가 더 빨리 실행되지만 호이스팅으로 인해 이미 선언된 것으로 간주합니다.
+
+(하지만 값을 먼저 할당하지는 않으므로 결과는 undefined)
+
+
+함수 역시 이미 선언된 것으로 간주하여 호이스팅으로 인한 호출이 가능합니다.
+
+
+
+var, let, const 모두 호이스팅이 되며, var은 위처럼 undefined가 결과로 뜨지만 let과 const는 에러가 발생합니다.
+
+분명 호이스팅으로 인해 이미 선언된 것으로 간주하는데 let, const는 에러가 발생합니다.
+
+
+
+우선 변수의 생성과정은
+
+1. 선언 단계 : 변수객체에 변수를 등록합니다.
+
+2. 초기화 단계 : 변수객체에 등록된 변수를 메모리에 할당합니다. 이 단계에서 변수는 undefined로 초기화됩니다.
+
+3. 할당 단계 : 변수에 값을 할당합니다.
+
+
+
+var은 선언과 초기화 단계를 동시에 진행하지만 let은 선언 단계와 초기화 단계가 따로 진행됩니다.
+
+따라서 호이스팅으로 let이 선언되었다고 해도 초기화 단계가 이루어지지 않았으므로 에러가 발생합니다.
+
+const는 선언과 동시에 초기값 할당을 해야해서 선언만 하게되면 에러가 발생합니다.
+
+따라서 const역시 호이스팅으로 선언되어도 초기값 할당이 되지않았기 때문에 에러가 발생합니다.
+
+
+
+[var vs let vs const]
+
+
+
+
+[연산자]
+
+== : 값이 일치하는지 확인
+
+!= : 값이 일치하지 않는지 확인
+
+
+
+=== : 값과 타입이 일치하는지 확인
+
+!== : 값과 타입이 일치하지 않는지 확인
+
+
+
+
+
+[일급 객체]
+
+- 자바스크립트에서의 함수
+
+- 변수, 객체, 배열에 저장할 수 있다.
+
+- 파라미터로 전달할 수 있다.
+
+- 리턴 값으로 사용될 수 있다.
+
+
+
+
+
+[매개변수]
+
+
+함수 정의 시 매개변수의 타입은 명시하지 않으며,
+
+함수 호출 시 매개변수와 전달인자의 갯수가 달라도 호출이 가능합니다.
+
+출력 : 3 (1 + 2)
+
+
+
+
+하지만 같은 이름의 함수를 여러 개 정의하면 호출 시 아래쪽에 선언된 함수만 호출됩니다.
+
+출력 : 3 (1 + 2)
+
+
+
+[함수 표현 방식]
+
+
+위에서부터 함수 선언문, 함수 표현식, Function 생성자 함수 호출 방식입니다.
+
+표현 방식은 달라도 호출 방식은 같습니다.
+
+함수 표현식과 생성자 함수 호출 방식은 일급객체 특성인 변수에 저장할 수 있는 방식입니다.
+
+
+
+
+
+[주기적인 실행]
+
+- setInterval : 일정한 시간 간격으로 작업을 실행하고, clearInterval로 중지할 수 있습니다.
+
+
+1초마다 t를 출력, t=6이면 clear
+- setTimeout : 일정한 시간 후에 작업을 한 번 실행하고, clearTimeout으로 중지할 수 있습니다.
+
+
+1초후에 t를 출력, 하지만 clearTimeout으로 인해 clear
+
+
+[문서 객체 가져오기]
+
+- 특정 element를 가져올 수 있습니다.
+
+getElementById(id) : 태그의 id속성이 id와 일치하는 element
+
+getElementsByClassName(classname) : 태그의 class 속성이 classname과 일치하는 element 배열
+
+getElementsByTagName(tagname) : 태그명이 tagname과 일치하는 element 배열
+
+querySelector(selector) : selector에 일치하는 첫번째 element 객체
+
+querySelectorAll(selector) : selector에 일치하는 모든 element 배열
+
+
+
+객체를 가져오는 getElement들은 script의 위치에 따라 다르게 작성해야합니다.
+
+위치라고 함은 불러오려는 element보다 위에 있는지, 밑에 있는지를 보는 것입니다.
+
+불러오려는 element보다 getElement가 밑에 있는 경우 그냥 작성할 수 있지만
+
+불러오려는 element보다 getElement가 위에 있는 경우, window.onload = function(){ } 안에 작성해야합니다.
+
+그렇지 않은 경우, 해당 element를 찾지 못하여 에러가 발생할 수 있습니다.
+
+
+
+
+id = a, b, result보다 script를 위에 작성하는 경우
+
+id = a, b, result보다 script를 밑에 작성하는 경우
+
+</body>
+</html>
